@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   const buttons = ["(",")","D","/",
-                   "7","8","9","X",
+                   "7","8","9","x",
                    "4","5","6","-",
                    "1","2","3","+",
                    "C","0",",","="];
@@ -26,7 +26,7 @@ export default function App() {
     }
     if (value === "=") {
       try{
-        setResultado(eval(operacoes));
+        setResultado(eval(operacoes.replace("x", "*").replace(",", ".")));
       }catch(error){
         alert("Error");
         setResultado("");
